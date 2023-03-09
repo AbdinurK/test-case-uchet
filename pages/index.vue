@@ -98,6 +98,7 @@ export default {
     margin: 0 auto;
 }
 .header {
+    margin-top: 30px;
     &_nav {
         display: flex;
         justify-content: space-between;

@@ -8,7 +8,11 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
+    "@nuxtjs/google-fonts": "^2.0.0",
     "nuxt": "^3.2.3",
     "sass": "^1.58.3"
+  },
+  "dependencies": {
+    "vuex": "^4.0.2"
   }
 }
