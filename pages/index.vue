@@ -131,6 +131,7 @@ export default {
     &_menu {
         list-style: none;
         padding-left: 0;
+        margin: 0;
         &_item {
             a {
                 text-decoration: none;
@@ -139,7 +140,9 @@ export default {
         }
     }
 }
-.content {
-
+.page {
+    display: flex;
+    margin-top: 50px;
+    gap: 50px;
 }
 </style>
