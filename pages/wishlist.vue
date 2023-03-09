@@ -1,0 +1,3 @@
+<template>
+    Wishlist page
+</template>
