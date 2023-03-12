@@ -8,7 +8,7 @@
         </div>
         <div class="card_actions">
             <button>
-                Add to cart
+                Add to cart {{ list }}
             </button>
             <button>
                 Add to wishlist
@@ -17,14 +17,19 @@
     </article>
 </template>
 
+
 <script lang="ts">
 export default {
     name: "ProductCard",
     methods: {
         increment() {
-            this.$store
         },
-    }
+    },
+    computed: {
+        list() {
+            return this.$store.getters['basket/name']
+        },
+  },
 }
 </script>
 
@@ -38,7 +43,6 @@ export default {
     overflow: hidden;
     &_image {
         margin: 0;
-        // height: 100%;
         height: 260px;
         width: 100%;
         img {
