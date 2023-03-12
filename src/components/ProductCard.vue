@@ -27,7 +27,7 @@ export default {
     },
     computed: {
         list() {
-            return this.$store.getters['basket/name']
+            return 'das'
         },
   },
 }
