@@ -5,8 +5,6 @@
       <img src="~/assets/images/rf-logo-2.png" alt="Rocket Firm" />
     </header>
 
-    {{ list }}
-
     <section class="card">
       <RFHeading tag="h2">Heading – RFHeading</RFHeading>
       <article class="component">
@@ -268,11 +266,6 @@ export default Vue.extend({
       ],
       selectedOption: 0,
     }
-  },
-  computed: {
-    list() {
-      return this.$store.getters['basket/name']
-    },
   },
   methods: {
     radioHandler(v: string) {
