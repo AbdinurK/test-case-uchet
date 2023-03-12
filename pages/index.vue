@@ -15,6 +15,7 @@
                     </figure>
                 </nuxt-link>
                 <button class="header_basket">
+                    <p> {{ basketItemsCount }}</p>
                     <figure class="basket-image">
                         <img src="/basket.png" alt="basket" />
                     </figure>
@@ -85,6 +86,11 @@ export default {
                     link: '#jewelry'
                 },
             ]
+        }
+    },
+    computed: {
+        basketItemsCount () {
+            return this.$store
         }
     }
 }

@@ -1,7 +1,6 @@
-import { createApp } from 'vue'
 import { createStore } from 'vuex'
 
-const store = createStore({
+export const store = createStore({
   state () {
     return {
       count: 0
