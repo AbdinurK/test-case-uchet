@@ -1,3 +1,0 @@
-<template>
-    Basket page
-</template>

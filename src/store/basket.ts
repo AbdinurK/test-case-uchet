@@ -1,9 +1,8 @@
 import { MutationTree, GetterTree } from 'vuex'
 
-
 export const state = () => ({
   list: [],
-  name: 'dasds'
+  name: 'dasds',
 })
 
 export type stateT = ReturnType<typeof state>
@@ -13,7 +12,7 @@ export const namespaced = true
 export const mutations: MutationTree<stateT> = {
   setList(state, payload) {
     state.list = payload
-  }
+  },
 }
 
 export const getters: GetterTree<stateT, stateT> = {
@@ -22,5 +21,5 @@ export const getters: GetterTree<stateT, stateT> = {
   },
   name(state) {
     return state.name
-  }
+  },
 }

@@ -1,155 +1,68 @@
 <template>
-    <main class="container">
-        <header class="header">
-            <nav class="header_nav">
-                <nuxt-link
-                    v-slot="{navigate}"
-                    to="/"
-                >
-                    <figure class="logo-image">
-                        <img src="/nuxt-logo-primary.svg" 
-                            alt="Logo"  
-                            role="link"
-                            @click="navigate" 
-                        />
-                    </figure>
-                </nuxt-link>
-                <button class="header_basket">
-                    <p> {{ basketItemsCount }}</p>
-                    <figure class="basket-image">
-                        <img src="/basket.png" alt="basket" />
-                    </figure>
-                </button>
-            </nav>
-        </header>
-        <div class="page">
-            <aside class="aside">
-                <ul class="aside_menu">
-                    <li class="aside_menu_item" v-for="item in categories">
-                        <a :href="item.link">{{ item.name }}</a>
-                    </li>
-                </ul>
-            </aside>
-            <Products />
-        </div>
-    </main>
+  <div class="container">
+    <div>
+      <img class="logo" src="~/assets/images/rf-logo.png" alt="Rocket Firm" />
+      <RFHeading tag="h1">Rocketfront Hybrid V2</RFHeading>
+      <div class="links">
+        <NuxtLink to="/ui" class="button--grey">UI</NuxtLink>
+      </div>
+    </div>
+  </div>
 </template>
 
-
 <script lang="ts">
-export default {
-    data() {
-        return {
-            categories: [
-                {
-                    id: 1,
-                    name: 'Все бренды',
-                    link: '#'
-                },
-                {
-                    id: 2,
-                    name: 'Электроника',
-                    link: '#electronics'
-                },
-                {
-                    id: 3,
-                    name: 'Для дома',
-                    link: '#home'
-                },{
-                    id: 4,
-                    name: 'Детские товары',
-                    link: '#kids'
-                },
-                {
-                    id: 5,
-                    name: 'Развлечения',
-                    link: '#enjoy'
-                },
-                {
-                    id: 6,
-                    name: 'Косметика',
-                    link: '#cosmetics'
-                },
-                {
-                    id: 7,
-                    name: 'Книги',
-                    link: '#books'
-                },
-                {
-                    id: 8,
-                    name: 'Игры',
-                    link: '#games'
-                },
-                {
-                    id: 9,
-                    name: 'Ювелирные украшения',
-                    link: '#jewelry'
-                },
-            ]
-        }
-    },
-    computed: {
-        basketItemsCount () {
-            return this.$store
-        }
-    }
-}
+import Vue from 'vue'
+import RFHeading from 'atoms/RFHeading/index.vue'
+
+/**
+ * PAGES/Home
+ * @displayName Home
+ */
+export default Vue.extend({
+  name: 'Home',
+  components: {
+    RFHeading,
+  },
+  mounted(): void {
+    this.$repositories.mock.getUsers()
+    this.$repositories.mock.getUserById(1)
+  },
+})
 </script>
 
-
-<style scoped lang="scss">
+<style>
 .container {
-    max-width: 1040px;
-    width: 100%;
-    margin: 0 auto;
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
-.header {
-    margin-top: 30px;
-    &_nav {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-    &_basket {
-        background: none;
-        border: none;
-        width: 30px;
-        height: 30px;
-        padding: 0;
-        cursor: pointer;
-    }
+
+.logo {
+  width: 60%;
 }
-.logo-image {
-    margin: 0;
+
+.title {
+  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
+    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  display: block;
+  font-weight: 300;
+  font-size: 100px;
+  color: #35495e;
+  letter-spacing: 1px;
 }
-.basket-image {
-    width: 30px;
-    height: 30px;
-    margin: 0;
-    img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
+
+.subtitle {
+  font-weight: 300;
+  font-size: 42px;
+  color: #526488;
+  word-spacing: 5px;
+  padding-bottom: 15px;
 }
-.aside {
-    font-size: 1.1rem;
-    color: #000;
-    &_menu {
-        list-style: none;
-        padding-left: 0;
-        margin: 0;
-        &_item {
-            a {
-                text-decoration: none;
-                color: inherit;
-            }
-        }
-    }
-}
-.page {
-    display: flex;
-    margin-top: 50px;
-    gap: 50px;
+
+.links {
+  padding-top: 15px;
 }
 </style>
