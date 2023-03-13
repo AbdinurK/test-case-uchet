@@ -5,18 +5,36 @@
         <nuxt-link v-slot="{ navigate }" to="/">
           <figure class="logo-image">
             <img
-              src="~/assets/images/nuxt-logo-primary.svg"
+              src="~/assets/icons/nuxt-logo-primary.svg"
               alt="Logo"
               role="link"
               @click="navigate"
             />
           </figure>
         </nuxt-link>
-        <button class="header_basket">
-          <figure class="basket-image">
-            <img src="~/assets/images/basket.png" alt="basket" />
-          </figure>
-        </button>
+        <ul class="header_list">
+          <nuxt-link v-slot="{ navigate }" to="/basket">
+            <figure class="basket-image">
+              <img
+                src="~/assets/icons/wishlist.png"
+                alt="basket"
+                role="link"
+                @click="navigate"
+              />
+            </figure>
+          </nuxt-link>
+          <nuxt-link v-slot="{ navigate }" to="/basket">
+            <figure class="basket-image">
+              <img
+                src="~/assets/icons/basket.png"
+                alt="basket"
+                role="link"
+                @click="navigate"
+              />
+              <figcaption>{{ list.length }}</figcaption>
+            </figure>
+          </nuxt-link>
+        </ul>
       </nav>
     </header>
     <div class="page">
@@ -90,6 +108,11 @@ export default Vue.extend({
       ],
     }
   },
+  computed: {
+    list() {
+      return this.$store.getters['basket/list']
+    },
+  },
 })
 </script>
 
@@ -106,11 +129,9 @@ export default Vue.extend({
     justify-content: space-between;
     align-items: center;
   }
-  &_basket {
-    background: none;
-    border: none;
-    width: 30px;
-    height: 30px;
+  &_list {
+    display: flex;
+    gap: 20px;
     padding: 0;
     cursor: pointer;
   }
