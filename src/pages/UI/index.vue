@@ -2,7 +2,7 @@
   <main class="board">
     <header>
       <RFHeading variant="light">Rocket Firm UI</RFHeading>
-      <img src="~/assets/images/rf-logo-2.png" alt="Rocket Firm" />
+      <!-- <img src="~/assets/images/rf-logo-2.png" alt="Rocket Firm" /> -->
     </header>
 
     <section class="card">
