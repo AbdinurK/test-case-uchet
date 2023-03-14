@@ -63,7 +63,7 @@ export default Vue.extend({
         {
           id: 1,
           name: 'Все бренды',
-          link: '#',
+          link: '#all',
         },
         {
           id: 2,

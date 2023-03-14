@@ -6,7 +6,6 @@
     "node": ">=14.x"
   },
   "scripts": {
-    "docker:dev": "docker-compose -f docker-compose.dev.yml up",
     "serve": "nuxt",
     "serve:stories": "cross-env MODE=stories nuxt storybook",
     "build": "nuxt build",
@@ -18,9 +17,6 @@
     "lint:style": "stylelint \"**/*.{vue,css}\" --ignore-path .gitignore",
     "lint": "yarn lint:js && yarn lint:style",
     "test": "jest",
-    "build:android": "cd android && ./gradlew cleanBuildCache && ./gradlew clean && ./gradlew bundleRelease && ./gradlew app:assembleRelease",
-    "run:ios": "npm run generate && npx cap copy && npx cap open ios",
-    "run:android": "npm run generate && npx cap copy && npx cap open android",
     "create-component": "node index.cli.js component",
     "create-page": "node index.cli.js page",
     "create-store": "node index.cli.js store",
@@ -38,10 +34,6 @@
     }
   },
   "dependencies": {
-    "@capacitor/android": "^2.4.7",
-    "@capacitor/cli": "^3.0.0-rc.0",
-    "@capacitor/core": "^3.0.0-rc.0",
-    "@capacitor/ios": "^2.4.7",
     "@nuxtjs/axios": "^5.13.1",
     "@nuxtjs/pwa": "^3.3.5",
     "core-js": "^3.9.1",

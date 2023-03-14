@@ -8,23 +8,12 @@ export default class MockRepository {
     this.$http = http
   }
 
-  async getUsers() {
+  async getProducts() {
     const data = await this.$http.get(
       'https://jsonplaceholder.typicode.com/users'
     )
     console.log(
-      '🐞 ~ file: index.js ~ line 6 ~ UserMock ~ getUsers ~ data',
-      data
-    )
-    return data
-  }
-
-  async getUserById(id) {
-    const data = await this.$http.get(
-      'https://jsonplaceholder.typicode.com/users/' + id
-    )
-    console.log(
-      '🐞 ~ file: index.js ~ line 26 ~ MockRepository ~ getUserById ~ data',
+      '🐞 ~ file: index.js ~ line 6 ~ ProductMock ~ getProducts ~ data',
       data
     )
     return data

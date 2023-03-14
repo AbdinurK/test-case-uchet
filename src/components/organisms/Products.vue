@@ -3,11 +3,6 @@
     <h2 class="heading">Косметика</h2>
     <div class="list">
       <ProductCard />
-      <ProductCard />
-      <ProductCard />
-      <ProductCard />
-      <ProductCard />
-      <ProductCard />
     </div>
   </div>
 </template>
