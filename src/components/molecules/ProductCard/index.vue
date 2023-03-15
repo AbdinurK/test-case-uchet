@@ -1,15 +1,36 @@
 <template>
   <article class="card">
     <figure class="card_image">
-      <img alt="product-image" src="~/assets/images/product.jpeg" />
+      <img alt="product-image" :src="product.image" />
     </figure>
-    <div class="card_title">Brand 1</div>
+    <div class="card_title">{{ product.name }}</div>
     <div class="card_actions">
-      <button>Add to cart</button>
+      <button @click="() => addToBasket(product.id)">Add to cart</button>
       <button>Add to wishlist</button>
     </div>
   </article>
 </template>
+
+<script lang="ts">
+import Vue from 'vue'
+import { TProduct } from '../../../types/DTO/product'
+export default Vue.extend({
+  props: {
+    product: {
+      type: TProduct,
+      required: true,
+    },
+  },
+  data() {
+    return {}
+  },
+  methods: {
+    addToBasket(id: number) {
+      this.$store.commit('basket/setList', id)
+    },
+  },
+})
+</script>
 
 <style scoped lang="scss">
 .card {

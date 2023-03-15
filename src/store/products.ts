@@ -1,4 +1,5 @@
 import { GetterTree } from 'vuex'
+import { TProduct } from '../types/DTO/product'
 
 export const state = () => ({
   list: [
@@ -202,7 +203,7 @@ export const state = () => ({
       quantity: 12,
       orderQuantity: 10,
     },
-  ],
+  ] as TProduct[],
 })
 
 export type stateT = ReturnType<typeof state>
