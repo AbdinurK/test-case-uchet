@@ -29,6 +29,7 @@
 [![eslint](https://img.shields.io/static/v1?label=eslint&message=7.23.0&color=4B32C3&style=for-the-badge&logo=eslint&logoColor=white)](https://eslint.org/)
 [![babel](https://img.shields.io/static/v1?label=babel&message=7.9.0&color=F9DC3E&style=for-the-badge&logo=babel&logoColor=white)](https://prettier.io/)
 [![docker](https://img.shields.io/static/v1?label=docker&message=19.03.13&color=0086CC&style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com/)
+
 ## Основые комманды
 
 Для запуска проекта в докер контейнере в режиме разработки
@@ -90,7 +91,6 @@
 ```
 
 Так как в шаблоне используется компонентная структура Atomic Design, то команда запросить какого типа компонент требуется сгенерировать.
-
 
 Для генерации компоненты-страницы
 
@@ -194,5 +194,3 @@ export default {
 ## Авторы
 
 - [@armankuanysh](https://t.me/armankuanysh)
-
-  

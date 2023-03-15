@@ -10,7 +10,6 @@ module.exports = {
     'plugin:nuxt/recommended',
   ],
   plugins: [],
-  // add your custom rules here
   rules: {
     'vue/script-setup-uses-vars': 0,
     'no-console': 0,
